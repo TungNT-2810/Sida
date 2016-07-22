@@ -16,5 +16,5 @@ import retrofit2.http.Path;
 public interface GetCustomerHistoryService {
     @POST("/service/primary")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<JSONCustomerHistoryList> callJsonCustomerHistoryList(@Body Id id);
+    Call<JSONCustomerHistoryList> callJsonCustomerHistoryList(@Body Id Id);
 }
