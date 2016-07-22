@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void getFucked(){
         GetCustomerHistoryService getCustomerHistoryService = ServiceFactory.getInstance().createService(GetCustomerHistoryService.class);
-        Call<JSONCustomerHistoryList> call = getCustomerHistoryService.callJsonCustomerHistoryList(100);
+        Call<JSONCustomerHistoryList> call = getCustomerHistoryService.callJsonCustomerHistoryList(new Id(100));
         call.enqueue(new Callback<JSONCustomerHistoryList>() {
             @Override
             public void onResponse(Call<JSONCustomerHistoryList> call, Response<JSONCustomerHistoryList> response) {
                 JSONCustomerHistoryList jsonCustomerHistoryList = response.body();
-                Log.d("FUCK", response.code()+"");
+                Log.d("FUCK", response.body().toString());
             }
 
             @Override
